@@ -1,0 +1,39 @@
+<div class="row well" style="width: 100%; margin-left:50px;">
+    
+        <ui-select  class="col-md-2" ng-model="rl.refugeeRelation.sourceId" theme="bootstrap" class="input-lg" style="min-width: 350px;" title="Choose a source refugee">
+                    <ui-select-match placeholder="Source refugee name/passport">{{$select.selected.name}}</ui-select-match>
+                    <ui-select-choices repeat="refugee in rl.refugees | propsFilter: {passport: $select.search, name: $select.search}">
+                      <div ng-bind-html="refugee.name | highlight: $select.search"></div>
+                      <small>
+                        passport: <span ng-bind-html="''+refugee.passport | highlight: $select.search"></span>
+                      </small>
+                    </ui-select-choices>
+        </ui-select>
+        <div class="col-md-1">
+            <i class="glyphicon glyphicon-arrow-right col-md-1"></i><br/>
+            <i class="glyphicon glyphicon-arrow-right col-md-1"></i>
+        </div>
+        <div class="col-md-2">
+                <select  class="col-md-2 form-control" ng-model="rl.tmpDegree" style=" margin-top: 0px;" ng-options="type.value as type.name for type in rl.degreeTypes track by type.value" ng-change="rl.setDegree()">
+                <option value="">-- select a relation degree --</option>
+            </select>
+        </div>
+    
+    <div class="col-md-1">
+        <span class="glyphicon glyphicon-arrow-right"></span><br/><span class="glyphicon glyphicon-arrow-right"></span>
+    </div>
+        <ui-select  class="col-md-2" ng-model="rl.refugeeRelation.targetId" theme="bootstrap" style="min-width: 350px;" title="Choose a target refugee">
+                    <ui-select-match placeholder="Target refugee by name/passport">{{$select.selected.name}}</ui-select-match>
+                    <ui-select-choices repeat="refugee in rl.refugees | propsFilter: {passport: $select.search, name: $select.search}">
+                      <div ng-bind-html="refugee.name | highlight: $select.search"></div>
+                      <small>
+                        passport: <span ng-bind-html="''+refugee.passport | highlight: $select.search"></span>
+                      </small>
+                    </ui-select-choices>
+                  </ui-select>
+</div>
+<div class="row">
+    <div class="col-md-2 col-md-offset-5">
+        <button class="btn btn-default" ng-click="rl.relate()">Relate</button>
+    </div>
+</div>

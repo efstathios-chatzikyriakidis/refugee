@@ -1,0 +1,64 @@
+<div class="row">
+    
+    <div class="form-group col-md-6" style="margin-top: 18px;">
+        <div class="col-md-2"><label for="listBtn" class="control-label">Queries:</label></div>
+        <div class="col-md-10 btn-group">
+
+                <button class="btn btn-default" id="listBtn" ng-click="sv.getNoFamily()">No family</button>
+                <button class="btn btn-default" id="listBtn" ng-click="sv.getUnderage()">Get Underage</button>
+            <button class="btn btn-default" id="listBtn" ng-click="sv.getFamilyWithChild()">Families with children</button>
+
+        </div>
+        
+    </div>
+    <div class="col-md-5">
+        <div class="col-md-5"><label for="graphBtn" style="margin-top:15px;" class="control-label">Refugee Relations:</label></div>
+        <div class="col-md-5">
+        <ui-select id="graphBtn" ng-change="sv.updateGraph()" ng-model="sv.curGuid" theme="bootstrap" class="input-lg" style="min-width: 390px;" title="Choose a refugee">
+                        <ui-select-match placeholder="Select source refugee by name/passport...">{{$select.selected.name}}</ui-select-match>
+                        <ui-select-choices repeat="refugee in sv.refugees | propsFilter: {passport: $select.search, name: $select.search}">
+                          <div ng-bind-html="refugee.name | highlight: $select.search"></div>
+                          <small>
+                            passport: <span ng-bind-html="''+refugee.passport | highlight: $select.search"></span>
+                          </small>
+                        </ui-select-choices>
+            </ui-select>
+            </div>
+    </div>
+</div>
+<div class="row">
+    <div ng-show="sv.isGraph==1" class="col-md-12 well" style="height: 500px;" ng-show="sv.curGuid">
+        <d3graph id="graph" guid="sv.curGuid"></d3graph>
+    </div>
+    <div ng-show="sv.isGraph==0" class="well">
+    <table class="table table-striped" at-paginated at-table at-config="sv.config" at-list="sv.filteredRefugeesFromPredefinedQuery">
+          <thead>
+              <div class="input-group">
+                  <span class="input-group-addon" id="searchLabel"><i class="glyphicon glyphicon-search"></i></span>
+                  <input type="text" class="form-control" placeholder="Search refugee ..." aria-describedby="searchLabel" ng-model="sv.filterText" ng-change="sv.updateFilter()">
+                </div>
+
+          </thead>
+          <tbody>
+            <tr>
+              <td at-attribute="name" at-sortable at-initial-sorting="asc"><a href="javascript:void(0)" ng-click="sv.openRefugee(item.index)">{{item.name}}</a></td>
+              <td at-implicit at-attribute="nationality" at-sortable at-initial-sorting="asc"></td>
+                <td at-attribute="genterType" at-title="Genter" at-sortable at-initial-sorting="asc">{{item.genderType==0?'Male':'Female'}}</td>
+                <td at-implicit at-attribute="birthYear" at-sortable at-initial-sorting="asc"></td>
+
+              <td at-implicit at-title="Passport ID" at-attribute="passport" at-sortable at-initial-sorting="asc"></td>
+                
+                <td at-attribute="hotSpot" at-sortable at-initial-sorting="asc">{{item.hotSpot.name}}</td>
+            </tr>
+          </tbody>
+
+        </table>
+        <div class="panel-footer">
+          <div class="row">
+            <div class="col-md-5 col-md-offset-2">
+              <at-pagination at-config="rf.config" at-list="rf.filteredRefugeesFromPredefinedQuery"></at-pagination>
+            </div>
+          </div>
+      </div>
+        </div>
+</div>

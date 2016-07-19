@@ -1,0 +1,27 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Refugee.Server.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="PlatformName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Refugee</Value>
+    </Setting>
+    <Setting Name="Neo4jUserName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">neo4j</Value>
+    </Setting>
+    <Setting Name="Neo4jPassword" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">neo4j</Value>
+    </Setting>
+    <Setting Name="Neo4jServerUrl" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://localhost:7474/db/data</Value>
+    </Setting>
+    <Setting Name="AuthenticationRealm" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Refugee</Value>
+    </Setting>
+    <Setting Name="AuthenticationRequiresHttps" Type="System.Boolean" Scope="Application">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="UnderageAgeThreshold" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">18</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

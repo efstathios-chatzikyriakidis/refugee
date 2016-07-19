@@ -1,0 +1,79 @@
+
+<div ng-class="{'col-md-12': ht.selectedHotspotIndex==-1&&!ht.newHotspot, 'col-md-7': ht.selectedHotspotIndex!=-1 || ht.newHotspot}">
+
+<div class="panel panel-default">
+  <div class="panel-heading">Hotspot Dashboard</div>
+  <div class="panel-body">
+    <table class="table table-striped" at-paginated at-table at-list="ht.filteredHotspots" at-config="ht.config">
+      <thead>
+          <div class="input-group">
+              <span class="input-group-addon" id="searchLable"><i class="glyphicon glyphicon-search"></i></span>
+              <input type="text" class="form-control" placeholder="Search hotspot ..." aria-describedby="searchLable" ng-model="ht.filterByName" ng-change="ht.updateFilter()">
+            </div>
+
+      </thead>
+      <tbody>
+        <tr>
+          <td at-implicit at-attribute="index" at-sortable at-initial-sorting="asc"></td>
+          <td at-attribute="name" at-sortable at-initial-sorting="desc"><a href="javascript:void(0)" ng-click="ht.openHotspot(item.index)">{{item.name}}</a></td>
+            <td at-attribute="locationUrl" at-title="Location" at-sortable ><a ng-href="{{item.locationUrl}}" target="_blank"><i class="glyphicon glyphicon-map-marker"></i></a></td>
+        </tr>
+      </tbody>
+      
+    </table>
+  </div>
+  <div class="panel-footer">
+      <div class="row">
+        <div class="col-md-5 col-md-offset-1">
+          <at-pagination at-config="ht.config" at-config="ht.config" at-list="ht.filteredHotspots"></at-pagination>
+               
+        </div>
+        <div class="pull-right"> 
+            <button s class="btn btn-default" ng-click="ht.createHotspot()" style="margin-right: 10px; margin-top: 20px;"> <i class="glyphicon glyphicon-plus">Add New</i></button>   
+        </div>
+      </div>
+  </div>
+</div>
+</div>
+<div class="col-md-4 col-md-offset-1" ng-show="ht.selectedHotspotIndex!=-1 || ht.newHotspot">
+    <div class="panel panel-default">
+      <div class="panel-heading">Hotspot {{ht.selectedHotspot.name}}</div>
+      <div class="panel-body">
+          <form class="form-horizontal" role="form">
+              <div class="form-group">
+                <div class="col-md-4"><label for="name" class="col-sm-2 control-label">Name</label></div>
+                <div class="col-md-4">
+                  <input ng-show="ht.editing" ng-model="ht.selectedHotspot.name" class="form-control" id="name" placeholder="Name">
+                  <span ng-show="!ht.editing">{{ht.selectedHotspot.name}}</span>
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <div class="col-md-4"><label for="longitude" class="col-sm-2 control-label">Longitude</label></div>
+                <div class="col-md-4" >
+                  <input id="longitude" ng-show="ht.editing" ng-model="ht.selectedHotspot.longitude" class="form-control" id="longitude" placeholder="Longitude">
+                  <span ng-show="!ht.editing">{{ht.selectedHotspot.longitude}}</span>
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <div class="col-md-4"><label for="latitude" class="col-sm-2 control-label">Latitude</label></div>
+                <div class="col-md-4" >
+                  <input ng-show="ht.editing" id="latitude" ng-model="ht.selectedHotspot.latitude" class="form-control" id="latitude" placeholder="Latitude">
+                  <span ng-show="!ht.editing">{{ht.selectedHotspot.latitude}}</span>
+                </div>
+              </div>
+              
+          </form>
+        </div>
+        <div class="panel-footer">
+            <div class="btn btn-group">
+                <button class="btn btn-default " ng-click="ht.closeHotspot()">Close</button>
+            <button ng-show="!ht.editing" class="btn btn-default " ng-click="ht.editing=true;">Edit</button>
+            <button ng-show="ht.editing" class="btn btn-default " ng-click="ht.newHotspot?ht.makeCreate():ht.saveHotspot()">Save</button>
+            <button ng-show="ht.editing&&!ht.newHotspot" class="btn btn-default " ng-click="ht.editing=false; ht.selectedHotspot=ht.tmpHotspot;">Cancel</button>    
+            </div>
+        
+        </div>
+    </div>
+</div>

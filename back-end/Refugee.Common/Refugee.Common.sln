@@ -1,0 +1,50 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Refugee.BusinessLogic.Infrastructure", "Refugee.BusinessLogic.Infrastructure\Refugee.BusinessLogic.Infrastructure.csproj", "{AAF473EF-8DC7-4942-92B9-4B009BA48A66}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Refugee.DataAccess.Generic", "Refugee.DataAccess.Generic\Refugee.DataAccess.Generic.csproj", "{6308A7BA-4EA3-42A2-BC50-4806C50FEECC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Refugee.DataAccess.NHibernate", "Refugee.DataAccess.NHibernate\Refugee.DataAccess.NHibernate.csproj", "{230ECDC5-8BC6-4D74-9059-2A5DAB0A225B}"
+	ProjectSection(ProjectDependencies) = postProject
+		{6308A7BA-4EA3-42A2-BC50-4806C50FEECC} = {6308A7BA-4EA3-42A2-BC50-4806C50FEECC}
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{F45173B9-EA05-4B42-AF66-21344CA44179}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Refugee.DataAccess.Neo4j", "Refugee.DataAccess.Neo4j\Refugee.DataAccess.Neo4j.csproj", "{F513BD8E-102E-483E-880C-20A9C15E0160}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AAF473EF-8DC7-4942-92B9-4B009BA48A66}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AAF473EF-8DC7-4942-92B9-4B009BA48A66}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AAF473EF-8DC7-4942-92B9-4B009BA48A66}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AAF473EF-8DC7-4942-92B9-4B009BA48A66}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6308A7BA-4EA3-42A2-BC50-4806C50FEECC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6308A7BA-4EA3-42A2-BC50-4806C50FEECC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6308A7BA-4EA3-42A2-BC50-4806C50FEECC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6308A7BA-4EA3-42A2-BC50-4806C50FEECC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{230ECDC5-8BC6-4D74-9059-2A5DAB0A225B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{230ECDC5-8BC6-4D74-9059-2A5DAB0A225B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{230ECDC5-8BC6-4D74-9059-2A5DAB0A225B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{230ECDC5-8BC6-4D74-9059-2A5DAB0A225B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F513BD8E-102E-483E-880C-20A9C15E0160}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F513BD8E-102E-483E-880C-20A9C15E0160}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F513BD8E-102E-483E-880C-20A9C15E0160}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F513BD8E-102E-483E-880C-20A9C15E0160}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

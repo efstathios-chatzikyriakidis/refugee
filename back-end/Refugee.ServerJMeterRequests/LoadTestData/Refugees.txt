@@ -1,0 +1,13 @@
+Adnan Ahmadi,Syria,0,AX43675424,1975,a4441a8d-15dd-4a50-b873-0228dae16896
+Omar Algafari,Syria,0,ADS4936542,2005,a4441a8d-15dd-4a50-b873-0228dae16896
+Mohammed Ali,Syria,0,AXAD666576,1999,d148e2aa-4d8f-47a1-bea6-69d5ad2d4a10
+Sami Assadi,Syria,1,AGW5436243,1978,d148e2aa-4d8f-47a1-bea6-69d5ad2d4a10
+Yaman Homsi,Syria,0,ACX9086543,1977,519fe854-3513-451f-a538-3caf9f18da37
+Ammar Rahum,Syria,1,ANC4325641,1980,48cbed9d-b8c8-4c27-9f4a-a81e20310500
+Anas Hussain,Syria,0,DFSD435653,1962,6a38350c-bb0a-4ce9-8764-f6699f63b8c9
+Fathi Nasser,Syria,0,ACX9086543,1977,6e54f841-431c-4719-8eea-99d86fedb6e3
+Moonif Ainasser,Turkey,1,ANC4325682,1985,c81f81b7-25f1-4f31-a938-efeec14a3c20
+Halil Said,Pakistan,0,DFSD435659,1972,45a3b385-deb8-49f0-a2d2-8474c126eac9
+Akram Nahas,Iraq,0,ACX9086549,1955,d39cbb2e-daa1-49f8-acbb-57fc0a17dd31
+Marwan Hakimi,Iran,1,ANC4325683,1991,a6251cb6-240a-4d1f-ba57-407ecbb0936f
+Houman Malouf,Afghanistan,0,DFSD435655,1968,c23efbf4-c2c8-415c-afb1-f0e689e09b87

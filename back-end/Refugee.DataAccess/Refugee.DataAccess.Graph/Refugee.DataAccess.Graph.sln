@@ -1,0 +1,59 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Refugee.DataAccess.Graph.Models", "Refugee.DataAccess.Graph.Models\Refugee.DataAccess.Graph.Models.csproj", "{2EDE90A9-DC07-47D1-BBF9-E2FD481146CE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Refugee.DataAccess.Graph.Repositories", "Refugee.DataAccess.Graph.Repositories\Refugee.DataAccess.Graph.Repositories.csproj", "{5B9360EB-721A-410C-99E1-21CA36102FB7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Externals", "Externals", "{A53CFE1A-9738-4CE2-B062-E591E5928CCA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Refugee.DataAccess.Generic", "..\..\Refugee.Common\Refugee.DataAccess.Generic\Refugee.DataAccess.Generic.csproj", "{6308A7BA-4EA3-42A2-BC50-4806C50FEECC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Refugee.DataAccess.Neo4j", "..\..\Refugee.Common\Refugee.DataAccess.Neo4j\Refugee.DataAccess.Neo4j.csproj", "{F513BD8E-102E-483E-880C-20A9C15E0160}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Refugee.DataAccess.Graph.UnitOfWork", "Refugee.DataAccess.Graph.UnitOfWork\Refugee.DataAccess.Graph.UnitOfWork.csproj", "{6A05AC8A-E231-4D80-A453-7444DD8C60AD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{66408691-88CB-4F24-B1DB-68FB617F9592}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2EDE90A9-DC07-47D1-BBF9-E2FD481146CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2EDE90A9-DC07-47D1-BBF9-E2FD481146CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2EDE90A9-DC07-47D1-BBF9-E2FD481146CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2EDE90A9-DC07-47D1-BBF9-E2FD481146CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B9360EB-721A-410C-99E1-21CA36102FB7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B9360EB-721A-410C-99E1-21CA36102FB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B9360EB-721A-410C-99E1-21CA36102FB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B9360EB-721A-410C-99E1-21CA36102FB7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6308A7BA-4EA3-42A2-BC50-4806C50FEECC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6308A7BA-4EA3-42A2-BC50-4806C50FEECC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6308A7BA-4EA3-42A2-BC50-4806C50FEECC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6308A7BA-4EA3-42A2-BC50-4806C50FEECC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F513BD8E-102E-483E-880C-20A9C15E0160}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F513BD8E-102E-483E-880C-20A9C15E0160}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F513BD8E-102E-483E-880C-20A9C15E0160}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F513BD8E-102E-483E-880C-20A9C15E0160}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A05AC8A-E231-4D80-A453-7444DD8C60AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A05AC8A-E231-4D80-A453-7444DD8C60AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A05AC8A-E231-4D80-A453-7444DD8C60AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A05AC8A-E231-4D80-A453-7444DD8C60AD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{6308A7BA-4EA3-42A2-BC50-4806C50FEECC} = {A53CFE1A-9738-4CE2-B062-E591E5928CCA}
+		{F513BD8E-102E-483E-880C-20A9C15E0160} = {A53CFE1A-9738-4CE2-B062-E591E5928CCA}
+	EndGlobalSection
+EndGlobal

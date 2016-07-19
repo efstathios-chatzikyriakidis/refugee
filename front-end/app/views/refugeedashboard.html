@@ -1,0 +1,100 @@
+<div ng-class="{'col-md-12': rf.selectedRefugeeIndex==-1&&!rf.newRefugee, 'col-md-7': rf.selectedRefugeeIndex!=-1 || rf.newRefugee}">
+
+    <div class="panel panel-default">
+      <div class="panel-heading">Refugee Dashboard</div>
+      <div class="panel-body">
+        <table class="table table-striped" at-paginated at-table at-config="rf.config" at-list="rf.filteredRefugees">
+          <thead>
+              <div class="input-group">
+                  <span class="input-group-addon" id="searchLabel"><i class="glyphicon glyphicon-search"></i></span>
+                  <input type="text" class="form-control" placeholder="Search refugee ..." aria-describedby="searchLabel" ng-model="rf.filterText" ng-change="rf.updateFilter()">
+                </div>
+
+          </thead>
+          <tbody>
+            <tr>
+              <td at-implicit at-attribute="index" at-sortable at-initial-sorting="asc"></td>
+              <td at-attribute="name" at-sortable at-initial-sorting="asc"><a href="javascript:void(0)" ng-click="rf.openRefugee(item.index)">{{item.name}}</a></td>
+              <td at-implicit at-attribute="nationality" at-sortable at-initial-sorting="asc"></td>
+                <td at-attribute="genterType" at-title="Genter" at-sortable at-initial-sorting="asc">{{item.genderType==0?'Male':'Female'}}</td>
+                <td at-implicit at-attribute="birthYear" at-sortable at-initial-sorting="asc"></td>
+
+              <td at-implicit at-title="Passport ID" at-attribute="passport" at-sortable at-initial-sorting="asc"></td>
+                
+                <td at-attribute="hotSpot" at-sortable at-initial-sorting="asc">{{item.hotSpot.name}}</td>
+            </tr>
+          </tbody>
+
+        </table>
+      </div>
+      <div class="panel-footer">
+          <div class="row">
+            <div class="col-md-5 col-md-offset-2">
+              <at-pagination at-config="rf.config" at-list="rf.filteredRefugees"></at-pagination>
+            </div>
+            <div class="pull-right">
+                <button class="btn btn-default" ng-click="rf.createRefugee()" style="margin-right: 10px; margin-top:20px;"> <i class="glyphicon glyphicon-plus">Add New</i></button>  
+            </div>  
+            
+          </div>
+      </div>
+</div>
+</div>
+<div class="col-md-4 col-md-offset-1" ng-show="rf.selectedRefugeeIndex!=-1 || rf.newRefugee">
+    <div class="panel panel-default">
+      <div class="panel-heading">Refugee {{rf.selectedRefugee.name}}</div>
+      <div class="panel-body">
+          <form class="form-horizontal" role="form">
+              <div class="form-group">
+                  <div class="col-sm-4" ><label for="name" class="col-sm-2 control-label">Name</label></div>
+                <div class="col-sm-6" >
+                  <input ng-show="rf.editing" ng-model="rf.selectedRefugee.name" class="form-control" id="name" placeholder="Name">
+                  <span ng-show="!rf.editing">{{rf.selectedRefugee.name}}</span>
+                </div>
+              </div>
+              <div class="form-group">
+                  <div class="col-sm-4" ><label for="nationality" class="col-sm-2 control-label">Nationality</label></div>
+                <div class="col-sm-6" >
+                  <input ng-show="rf.editing" ng-model="rf.selectedRefugee.nationality" class="form-control" id="nationality" placeholder="Nationality">
+                  <span ng-show="!rf.editing">{{rf.selectedRefugee.nationality}}</span>
+                </div>
+              </div>
+              <div class="form-group">
+                  <div class="col-sm-4" ><label for="passport" class="col-sm-2 control-label">Passport</label></div>
+                <div class="col-sm-6" >
+                  <input ng-show="rf.editing" ng-model="rf.selectedRefugee.passport" class="form-control" id="passport" placeholder="Passport">
+                  <span ng-show="!rf.editing">{{rf.selectedRefugee.passport}}</span>
+                </div>
+              </div>
+              <div class="form-group">
+                  <div class="col-sm-4" ><label for="birthYear" class="col-sm-2 control-label">Birth year</label></div>
+                <div class="col-sm-6" >
+                  <input type="number" ng-show="rf.editing" ng-model="rf.selectedRefugee.birthYear" class="form-control" id="birthYear" placeholder="Birth year">
+                  <span ng-show="!rf.editing">{{rf.selectedRefugee.birthYear}}</span>
+                </div>
+              </div>
+              <div class="form-group">
+                  <div class="col-sm-4" ><label for="hotSpot" class="col-sm-2 control-label">Hotspot</label></div>
+                  <div class="col-sm-6" ><ui-select ng-show="rf.editing" ng-model="rf.selectedRefugee.hotSpot" theme="bootstrap" title="Choose a hotspot">
+                    <ui-select-match placeholder="Search by name...">{{$select.selected.name}}</ui-select-match>
+                    <ui-select-choices repeat="hotspot in rf.hotspots | propsFilter: {name: $select.search}">
+                      <div ng-bind-html="hotspot.name | highlight: $select.search"></div>
+                    </ui-select-choices>
+                      </ui-select>
+                  <span ng-show="!rf.editing">{{rf.selectedRefugee.hotSpot.name}}</span>
+                  </div>
+              </div>
+              
+          </form>
+        </div>
+        <div class="panel-footer">
+            <div class="btn btn-group">
+                <button class="btn btn-default " ng-click="rf.closeRefugee()">Close</button>
+            <button ng-show="!rf.editing" class="btn btn-default " ng-click="rf.editing=true;">Edit</button>
+            <button ng-show="rf.editing" class="btn btn-default " ng-click="rf.newRefugee?rf.makeCreate():rf.saveRefugee()">Save</button>
+            <button ng-show="rf.editing&&!rf.newRefugee" class="btn btn-default " ng-click="rf.editing=false;rf.selectedRefugee=rf.tmpRefugee;">Cancel</button>    
+            </div>
+        
+        </div>
+    </div>
+</div>
